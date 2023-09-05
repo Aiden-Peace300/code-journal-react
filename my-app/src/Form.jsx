@@ -3,15 +3,46 @@ import image from './images/placeholder-image-square.jpg';
 import { useState } from 'react';
 
 // form component
-export default function Form() {
+export default function Form({ data }) {
   const [photoUrl, setPhotoUrl] = useState(image);
+  const [formData, setFormData] = useState({
+    title: '',
+    notes: '',
+  });
 
   const handlePhotoURLChange = (e) => {
     setPhotoUrl(e.target.value);
   };
 
+  function handleSubmit(event) {
+    event.preventDefault(); // Preventing form submission
+
+    const newEntry = {
+      entryId: data.nextEntryId,
+      title: formData.title,
+      photoUrl,
+      notes: formData.notes,
+    };
+
+    // Incrementing the nextEntryId for the next form submission
+    data.nextEntryId++;
+
+    // Adding the newEntry to the entries array
+    data.entries.unshift(newEntry);
+
+    // Resetting the preview image's src attribute back to the placeholder image
+    setPhotoUrl(image);
+
+    // Resetting the form (if you want to clear the form fields)
+    // You can use the state to clear the form fields as well
+    setFormData({
+      title: '',
+      notes: '',
+    });
+  }
+
   return (
-    <form id="entryForm">
+    <form id="entryForm" onSubmit={handleSubmit({ data })}>
       <div className="row margin-bottom-1">
         <div className="column-half">
           <img
@@ -33,6 +64,10 @@ export default function Form() {
               type="text"
               id="form-title"
               name="form-title"
+              value={formData.title}
+              onChange={(e) =>
+                setFormData({ ...formData, title: e.target.value })
+              }
             />
 
             <label className="margin-bottom-1 d-block" htmlFor="photoUrk">
