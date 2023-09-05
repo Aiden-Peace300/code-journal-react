@@ -13,27 +13,32 @@ export default function Form() {
             alt="image of entry image"
           />
         </div>
-        <div className="column-half">
-          <label className="margin-bottom-1 d-block" htmlFor="title">
-            Title
-          </label>
-          <input
-            required
-            className="input-b-color text-padding input-b-radius purple-outline input-height margin-bottom-2 d-block width-100"
-            type="text"
-            id="formTitle"
-            name="formTitle"
-          />
-          <label className="margin-bottom-1 d-block" htmlFor="photoUrk">
-            Photo URL
-          </label>
-          <input
-            required
-            className="input-b-color text-padding input-b-radius purple-outline input-height margin-bottom-2 d-block width-100"
-            type="text"
-            id="formURL"
-            name="formURL"
-          />
+        <div className="row">
+          <div className="column-half">
+            <label className="margin-bottom-1 d-block" htmlFor="title">
+              Title
+            </label>
+
+            <input
+              required
+              className="input-b-color text-padding input-b-radius purple-outline input-height margin-bottom-2 d-block width-100"
+              type="text"
+              id="form-title"
+              name="form-title"
+            />
+
+            <label className="margin-bottom-1 d-block" htmlFor="photoUrk">
+              Photo URL
+            </label>
+
+            <input
+              required
+              className="input-b-color text-padding input-b-radius purple-outline input-height margin-bottom-2 d-block width-100"
+              type="text"
+              id="formURL"
+              name="formURL"
+            />
+          </div>
         </div>
       </div>
       <div className="row margin-bottom-1">

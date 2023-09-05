@@ -106,7 +106,9 @@
 }
 
 .form-image {
-  width: 100%;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .input-height {
@@ -177,4 +179,8 @@
   width: 120px;
   border: none;
   font-size: 1.3rem;
+}
+
+#form-title {
+  width: 100%;
 }
