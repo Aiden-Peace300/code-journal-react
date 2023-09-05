@@ -1,7 +1,7 @@
 import NavBar from './NavBar';
 import Form from './Form';
 import EntryList from './EntryList';
-import data from './data';
+import { data } from './data.js';
 import './App.css';
 
 function App() {

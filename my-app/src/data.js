@@ -12,3 +12,5 @@ const localData = JSON.parse(localStorage.getItem('code-journal-data'));
 if (localData) {
   data = localData;
 }
+
+export { data };

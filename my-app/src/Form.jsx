@@ -1,7 +1,18 @@
 import './Form.css';
 import image from './images/placeholder-image-square.jpg';
+import { useState } from 'react';
 
+// form component
 export default function Form() {
+  const [photoUrl, setPhotoUrl] = useState(image);
+
+  //
+  function handlePhotoUrl(event) {
+    // BOOOOOKMARK COME BACK TO THIS
+    photoUrl = setPhotoUrl(photoUrl.value);
+    $image.src = photoUrl;
+  }
+
   return (
     <form id="entryForm">
       <div className="row margin-bottom-1">
@@ -37,6 +48,8 @@ export default function Form() {
               type="text"
               id="formURL"
               name="formURL"
+              value={image}
+              onChange={handlePhotoUrl}
             />
           </div>
         </div>
