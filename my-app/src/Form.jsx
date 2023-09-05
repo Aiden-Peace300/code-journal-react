@@ -42,7 +42,7 @@ export default function Form({ data }) {
   }
 
   return (
-    <form id="entryForm" onSubmit={handleSubmit({ data })}>
+    <form id="entryForm" onSubmit={handleSubmit}>
       <div className="row margin-bottom-1">
         <div className="column-half">
           <img
@@ -97,7 +97,10 @@ export default function Form({ data }) {
             name="formNotes"
             id="formNotes"
             cols="30"
-            rows="10"></textarea>
+            rows="10"
+            onChange={(e) =>
+              setFormData({ ...formData, notes: e.target.value })
+            }></textarea>
         </div>
       </div>
       <div className="row">
