@@ -6,12 +6,9 @@ import { useState } from 'react';
 export default function Form() {
   const [photoUrl, setPhotoUrl] = useState(image);
 
-  //
-  function handlePhotoUrl(event) {
-    // BOOOOOKMARK COME BACK TO THIS
-    photoUrl = setPhotoUrl(photoUrl.value);
-    $image.src = photoUrl;
-  }
+  const handlePhotoURLChange = (e) => {
+    setPhotoUrl(e.target.value);
+  };
 
   return (
     <form id="entryForm">
@@ -20,7 +17,7 @@ export default function Form() {
           <img
             className="input-b-radius form-image"
             id="formImage"
-            src={image}
+            src={photoUrl}
             alt="image of entry image"
           />
         </div>
@@ -48,8 +45,8 @@ export default function Form() {
               type="text"
               id="formURL"
               name="formURL"
-              value={image}
-              onChange={handlePhotoUrl}
+              value={photoUrl}
+              onChange={handlePhotoURLChange}
             />
           </div>
         </div>
