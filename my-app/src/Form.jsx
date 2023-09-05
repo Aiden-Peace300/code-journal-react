@@ -8,6 +8,7 @@ export default function Form({ data }) {
   const [formData, setFormData] = useState({
     title: '',
     notes: '',
+    photoUrl: '',
   });
 
   const handlePhotoURLChange = (e) => {
@@ -38,6 +39,7 @@ export default function Form({ data }) {
     setFormData({
       title: '',
       notes: '',
+      photoUrl: '',
     });
   }
 
