@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <NavBar onNavBarClick={setToggle} />
-      {!toggle && <Form data={data} />}
+      {!toggle && <Form data={data} toggle={toggle} />}
       {toggle && <EntryList data={data} />}
     </>
   );

@@ -1,10 +1,12 @@
 import './Form.css';
 import image from './images/placeholder-image-square.jpg';
 import { useState } from 'react';
+import EntryList from './EntryList';
 
 // form component
-export default function Form({ data }) {
+export default function Form({ data, toggle }) {
   const [photoUrl, setPhotoUrl] = useState(image);
+  // const [view, setView] = useState(entries);
   const [formData, setFormData] = useState({
     title: '',
     notes: '',
@@ -113,7 +115,9 @@ export default function Form({ data }) {
             id="deleteEntry">
             Delete Entry
           </button>
-          <button className="input-b-radius text-padding purple-background white-text">
+          <button
+            className="input-b-radius text-padding purple-background white-text"
+            onClick={() => toggle && <EntryList data={data} />}>
             SAVE
           </button>
         </div>

@@ -1,8 +1,9 @@
 import { data } from './data.js';
+import './Form.css';
 
 export default function EntryList() {
   const newEntry = data.entries.map((entry) => (
-    <li key={data.entryId} className="row">
+    <li key={data.entries.entryId} className="row">
       <div className="column-half">
         <img src={entry.photoUrl} className="input-b-radius form-image" />
       </div>
@@ -12,5 +13,10 @@ export default function EntryList() {
       </div>
     </li>
   ));
-  return <ul>{newEntry}</ul>;
+  return (
+    <>
+      <button>New</button>
+      <ul>{newEntry}</ul>;
+    </>
+  );
 }
